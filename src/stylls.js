@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Styls = styled.div`
   .contsainer {
+    @media (max-width: 920px) {
+      width: 80%;
+    }
     margin: auto;
     margin-top: 110px;
     width: 30%;
