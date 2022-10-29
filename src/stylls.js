@@ -2,30 +2,35 @@ import styled from "styled-components";
 
 export const Styls = styled.div`
   .contsainer {
+    
+    font-family: "Open Sans",helvetica,arial,sans-serif;
     @media (max-width: 920px) {
-      width: 80%;
+      width: 70%;
     }
     margin: auto;
-    margin-top: 110px;
+    margin-top: 130px;
+    padding-left: 80px;
     width: 30%;
-    text-align: center;
   }
   .imagee {
-    width: 100px;
+    width: 75%;
+    margin-bottom: 35px;
+    margin-left: -5px;
+  }
+  label {
+    font-family: "Open Sans",helvetica,arial,sans-serif;
+    font-size: 15px;
+    span {
+      font-weight: 600;
+      color: #435c72;
+    }
   }
 
   .newicon1 {
     position: absolute;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-
-    border-radius: 6px 0px 0px 6px;
-    margin-top: 10px;
-
-    padding: 12px;
-    padding-left: 14px;
-    padding-right: 14px;
-    color: #495057;
-    background: #f1f3f4;
+    margin-top: 20px;
+    margin-left: 15px;
+    color: #bebebe;
   }
 
   .navbar {
@@ -37,66 +42,80 @@ export const Styls = styled.div`
   }
 
   input[type="email"] {
-    font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    width: 70%;
-    height: auto;
-    padding: 2px 0px;
-    padding-left: 57px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 8px;
+    font-size: 13.7px;
+    font-family: "Open Sans",helvetica,arial,sans-serif;
+    width: 60%;
+    height: 18px;
+    padding-left: 40px;
+    font-weight: 500;
+    padding-top: 8.5px;
+    padding-bottom: 7.5px;
     margin-top: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-
-    border-radius: 7px 6px 6px 7px;
+    margin-bottom: 14px;
+    border: 2px solid #bebebe;
+    border-radius: 4px;
   }
   input[type="password"] {
-    font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    width: 70%;
-    height: auto;
-    padding: 2px 0px;
-    padding-left: 57px;
-    padding-top: 10px;
-    padding-bottom: 8px;
-    font-weight: 400;
-    margin-top: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-
-    border-radius: 7px 6px 6px 7px;
-  }
-  p {
-    color: gray;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-  button {
-    font-size: 17px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    width: 84%;
+    font-size: 13.7px;
+    font-family: "Open Sans",helvetica,arial,sans-serif;
+    width: 60%;
+    height: 18px;
+    padding-left: 40px;
     font-weight: 500;
+    padding-top: 8.5px;
+    padding-bottom: 7.5px;
+    margin-top: 10px;
+    border: 2px solid #bebebe;
+    border-radius: 4px;
+  }
+
+  button {
+    font-size: 14px;
+    font-family: "Open Sans",helvetica,arial,sans-serif;
+    width: 72%;
+    font-weight: 600;
     color: white;
     cursor: pointer;
     height: auto;
     padding: 2px 0px;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    background: #37beff;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-top: 30px;
+    border: 1px solid rgb(105, 103, 103);
+    background: #179bd7;
     border-radius: 7px 6px 6px 7px;
   }
   .reda {
     color: red;
     margin: 5px;
   }
+  .labeltext {
+    text-align: left;
+  }
+  ul {
+    margin: auto;
+    margin-top: 100px;
+    @media (max-width: 720px) {
+      width: 85%;
+    }
+    width: 35%;
+    list-style-type: none;
+    display flex;  
+    justify-content: space-between; 
+    a{
+      font-size: 13.4px;
+      font-family: "Open Sans",helvetica,arial,sans-serif;
+      font-weight: 600;
+      color: rgb(107, 97, 97);
+      text-decoration: none;
+    }
+  }
+.smaller{
+  margin-top: 100px;
+text-align: center;
+  font-family: "Open Sans",helvetica,arial,sans-serif;
+  font-size: 11px;
+  color: rgb(107, 97, 97);
+}
 `;
