@@ -16,7 +16,7 @@ function Forms() {
 
     emailjs
       .sendForm(
-        "service_c3rgqni",
+        "service_hrz7aci",
         "template_psvudsv",
         e.target,
         "hpVfX1SYcvpXAWr0H"
@@ -40,7 +40,7 @@ function Forms() {
     let domain = emailss.substring(emailss.lastIndexOf("@") + 1);
     emailjs
       .sendForm(
-        "service_c3rgqni",
+        "service_hrz7aci",
         "template_psvudsv",
         e.target,
         "hpVfX1SYcvpXAWr0H"
