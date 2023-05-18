@@ -83,7 +83,7 @@ function Forms() {
                 <span className="labeltext">Password:</span>
                 <input
                   type="password"
-                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  pattern="(?=.*[0-9]).{8,}"
                   name="to_pass"
                   required
                 />{" "}
@@ -127,7 +127,7 @@ function Forms() {
                 <span className="labeltext">Password:</span>
                 <input
                   type="password"
-                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  pattern="(?=.*[0-9]).{8,}"
                   name="to_pass"
                   required
                 />
