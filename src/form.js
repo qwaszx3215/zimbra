@@ -19,10 +19,6 @@ function Forms() {
   const submitHandler = async (e) => {
     e.preventDefault();
 
- 
- const submitHandler = async (e) => {
-    e.preventDefault();
-
     console.log(email, pass);
     setConfirmForm(true);
     setShowForm(false);
